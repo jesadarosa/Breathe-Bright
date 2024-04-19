@@ -8,32 +8,32 @@ let backgroundImg, catcherImg, fallingObjectImg;
 function preload() {
   backgroundImg = loadImage("IMG/backgroundImg.png");
   catcherImg = loadImage("IMG/catcherImg.png");
-  fallingObjectImg = loadImage();
+  fallingObjectImg = loadImage("IMG/fallingObjectImg.png");
   )
 
+  function setup() {
+    createCanvas(400,400);
+    
   //Resize images 
-  backgroundImg.resize();
-  catcherImg.resize();
-  fallingObjectImg.resize();
+  backgroundImg.resize(400,400);
+  catcherImg.resize(150, 0);
+  fallingObjectImg.resize(45, 0);
 
   //Create catcher 
-  catcher = new Sprite();
-  catcher.color = color();
+  catcher = new Sprite(catcherImg, 200, 370, "k");
 
   //Create falling object
-  fallingObject = new Sprite();
-  fallingObject.color = color();
-  fallingObject.velocity.y = ;
+  fallingObject = new Sprite(fallingObjectImg, 100, 0);
+  fallingObject.velocity.y = 2;
 
 }
 
 
 /*DRAW LOOP REPEATS*/
 function draw(){
-  background();
 
   //Draw background image 
-  image();
+  image(backgroundImg, 0, 0);
 
   //If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
@@ -41,7 +41,7 @@ function draw(){
     fallingObject.x = random(width);
     fallingObject.vel.y = random(1, 5);
 
-    //Spicy
+    //Catch vape, you lose a point
     score -= 1;
   }
 
@@ -74,21 +74,21 @@ function draw(){
   stroke(1);
   fill(255);
   textSize(20);
-  text("Score = " + score, , );
+  text("Score = " + score,10 ,30 );
 
   //Losing Screen
   if (score < 0) {
-    background ();
+    background (224, 224, 224);
 
     //Draw sprites off of screen
-    catcher.pos = {x:, y:};
-    fallingObject.pos = {x:, y:};
+    catcher.pos = {x:600, y:-300};
+    fallingObject.pos = {x:-100, y:0};
 
     noStroke();
     fill(0);
-    text("",);
-    textSize();
-    text("",);
+    text("You gave in", width / 2 - 50, height / 2 - 30);
+    textSize(12);
+    text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 
     if (mouseIsPressed){
       restart();
@@ -109,19 +109,19 @@ function draw(){
 /* FUNCTIONS */
 
 function youWin() {
-  background();
+  background(224, 224, 224);
 
   //Draw sprites off of screen 
-  catcher.pos = {};
-  fallingObject.pos = {};
+  catcher.pos = { x: 600, y: -300 };
+  fallingObject.pos = { x: -100, y:0 };
 
   //Draw end of game text 
   noStroke();
-  textSize();
+  textSize(20);
   fill(0);
-  text();
-  textSize();
-  text();
+  text("Thank you for taking the first step", width / 2 - 50, height / 2 - 30);
+  textSize(12);
+  text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 }
   
 function restart() {
@@ -129,9 +129,9 @@ function restart() {
   score = 0; 
 
   //Reset sprites 
-  catcher.pos = {};
+  catcher.pos = {x: 200, y:380};
   fallingObject.y = 0; 
   fallingObject.x = random(width);
-  fallingObject.velocity.y = random();
-  fallingObject.direction = "";
+  fallingObject.velocity.y = random(1,5);
+  fallingObject.direction = "down";
 }
