@@ -6,8 +6,8 @@ let backgroundImg, catcherImg, fallingObjectImg;
 
 /*PRELOAD LOADS FILES*/
 function preload() {
-  backgroundImg = loadImage();
-  catcherImg = loadImage();
+  backgroundImg = loadImage("IMG/backgroundImg.png");
+  catcherImg = loadImage("IMG/catcherImg.png");
   fallingObjectImg = loadImage();
   )
 
