@@ -15,16 +15,14 @@ function setup() {
   
   // Resize images
   backgroundImg.resize(windowWidth, windowHeight);
-  catcherImg.resize(200, 0);
-  fallingObjectImg.resize(700, 0);
+  catcherImg.resize(500, 0);
+  fallingObjectImg.resize(300, 0);
   
   //Create catcher 
    catcher = new Sprite(catcherImg, width / 2, height - catcherImg.height / 2 * 0.5, "k");
-  //catcher.color = color(95,158,160);
   
   //Create falling object
   fallingObject = new Sprite(fallingObjectImg, 100, 0);
-  //fallingObject.color = color(0,128,128);
   fallingObject.velocity.y = 2;
   
 }
@@ -46,7 +44,6 @@ function draw() {
     fallingObject.x = random(width);
     fallingObject.vel.y = random(1, 5);
 
-    // Spicy 
     score -= 1;
   }
   // Move catcher
@@ -59,11 +56,11 @@ function draw() {
   }
 
   // Stop catcher at edges of screen
-  if (catcher.x < 50) {
-    catcher.x = 50;
-  } else if (catcher.x > 350) {
-    catcher.x = 350;
-  }
+if (catcher.x - catcherImg.width / 2 < 0) {
+  catcher.x = catcherImg.width / 2;
+} else if (catcher.x + catcherImg.width / 2 > width) {
+  catcher.x = width - catcherImg.width / 2;
+}
 
   // If fallingObject collides with catcher, move back to random position at top
   if (fallingObject.collides(catcher)) {
@@ -80,7 +77,7 @@ function draw() {
   textSize(20);
   text("Score = " + score, 10, 30);
 
-  // Medium Losing screen
+  // Winning screen
   if (score < 0){
     
   background(224, 224, 224);
@@ -100,7 +97,7 @@ function draw() {
     
   }
 
-  // Spicy - Check to see if player won
+  // Check to see if player won
   if (score == 10) {
     youWin();
 
@@ -114,7 +111,7 @@ function draw() {
 
 /* FUNCTIONS */
 
-function youLose() {
+function youWin() {
   background(224, 224, 224);
 
   // Draw sprites off of screen
