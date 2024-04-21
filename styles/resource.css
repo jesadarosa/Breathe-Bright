@@ -20,12 +20,15 @@ body {
 img {
     max-width: 25%;
     max-height:15%;
-    float: right;
-}
-
-.text {
-    font-size: 20px;
-    padding-left: 20px;
-    /*padding-top: 20%;*/
     float: left;
 }
+
+/* .text {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 20%;
+    float: right;
+}
+*/
+
+
