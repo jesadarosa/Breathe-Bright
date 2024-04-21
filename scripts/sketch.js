@@ -173,8 +173,8 @@ function setup() {
   
   // Resize images
   backgroundImg.resize(windowWidth, windowHeight);
-  catcherImg.resize(200, 0);
-  fallingObjectImg.resize(700, 0);
+  catcherImg.resize(700, 0);
+  fallingObjectImg.resize(300, 0);
   
   //Create catcher 
    catcher = new Sprite(catcherImg, width / 2, height - catcherImg.height / 2 * 0.5, "k");
@@ -297,7 +297,7 @@ function youWin() {
 
   // Check if the button is clicked
   if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
-    window.location.href = 'resource.html'; // Replace 'your_html_page.html' with your actual HTML page URL
+    window.location.href = 'resource.html'; 
   }
   
 }
