@@ -95,7 +95,8 @@ function draw() {
   text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 
     if (mouseIsPressed) {
-      restart();
+      /*restart();*/
+      window.location.href = 'resource.html';
     }
     
   }
