@@ -229,6 +229,12 @@ function draw() {
     fallingObject.x = random(width);
     fallingObject.velocity.y = random(1, 5); // Fixed typo
     score += 1;
+    // Ensure fallingObject stays within screen boundaries
+  if (fallingObject.x < 0) {
+    fallingObject.x = 0;
+  } else if (fallingObject.x > width - fallingObjectImg.width) {
+    fallingObject.x = width - fallingObjectImg.width;
+  }
   }
 
   // Draw the score to screen
