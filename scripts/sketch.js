@@ -90,7 +90,7 @@ function draw() {
 
   noStroke();
   fill(0);
-  text("You gave in", width / 2 - 50, height / 2 - 30);
+  text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
   textSize(12);
   text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 
@@ -126,7 +126,7 @@ function youWin() {
   noStroke();
   textSize(20);
   fill(0);
-  text("You healed!", width / 2 - 50, height / 2 - 30);
+  text("You gave in.", width / 2 - 50, height / 2 - 30);
   textSize(12);
   text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 }
