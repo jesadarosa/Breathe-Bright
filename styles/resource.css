@@ -4,31 +4,114 @@ body {
     font-family: "Forum", serif;
     font-weight: 0;
     color:#2E0028;
+     margin: 0;
+}
+
+.header {
+    background-color: #e8e8e8;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 200px;
+}
+
+.title-container {
+    font-size: 80px;
+
+}
+
+.title-bio {
+    font-size: 20px;
+}
+
+.web-container {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    margin: 70px;
+    width: 300px;
+}
+
+.web-container .description {
+    padding: 10px; 
+    text-align: center;
+}
+
+.web-container:hover {
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+}
+
+.web-container img {
+    width: 100%;
+    height: auto;
 }
 
 .container {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    padding: 2rem;
+    /*background-color:#d9d9d9;*/
+    background-color:#e8e8e8;
 }
 
-.title {
-    font-size: 100px;
-    color:#2E0028;
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto; 
 }
 
-img {
-    max-width: 25%;
-    max-height:15%;
-    float: left;
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
 }
 
-/* .text {
-    font-size: 20px;
-    padding-left: 20px;
-    padding-top: 20%;
-    float: right;
+.slider img {
+    flex: 1 0 100%;
+    width: auto; 
+    height: 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
 }
-*/
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem; 
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+
+.hotline-container {
+    padding: 2rem;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    margin: 80px;
+    width: 500px;
+}
+
+.hotline-container:hover {
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+}
+
 
 
