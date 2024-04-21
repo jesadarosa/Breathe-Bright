@@ -11,15 +11,15 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   
   // Resize images
-  backgroundImg.resize(400, 400);
-  catcherImg.resize(150, 0);
-  fallingObjectImg.resize(45, 0);
+  backgroundImg.resize(windowWidth, windowHeight);
+  catcherImg.resize(200, 0);
+  fallingObjectImg.resize(700, 0);
   
   //Create catcher 
-   catcher = new Sprite(catcherImg, 200, 370, "k");
+   catcher = new Sprite(catcherImg, width / 2, height - catcherImg.height / 2 * 0.5, "k");
   //catcher.color = color(95,158,160);
   
   //Create falling object
@@ -114,8 +114,7 @@ function draw() {
 
 /* FUNCTIONS */
 
-// Spicy
-function youWin() {
+function youLose() {
   background(224, 224, 224);
 
   // Draw sprites off of screen
