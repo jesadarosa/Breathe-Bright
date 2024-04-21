@@ -7,13 +7,14 @@ body {
      margin: 0;
 }
 
-.header {
+/*.header {
     background-color: #e8e8e8;
     margin-top: 20px;
     margin-left: 0px;
     margin-right: 0px;
     height: 200px;
 }
+*/
 
 .title-container {
     font-size: 80px;
