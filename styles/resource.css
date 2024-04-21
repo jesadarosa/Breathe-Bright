@@ -12,20 +12,20 @@ body {
     justify-content: center; 
 }
 
-#resources p {
+.resources p {
     font-size: 100px;
     color:#2E0028;
 }
 
-#htext p {
-    font-size: 20px;
-    padding-right: 20px;
-    float: left;
-}
-
 img {
     max-width: 25%;
-    max-height: 15%;
+    max-height:15%;
     float: right;
 }
 
+.text {
+    font-size: 20px;
+    padding-left: 20px;
+    /*padding-top: 20%;*/
+    float: left;
+}
