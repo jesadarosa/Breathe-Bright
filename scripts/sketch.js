@@ -95,8 +95,7 @@ function draw() {
   text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
 
     if (mouseIsPressed) {
-      /*restart();*/
-      window.location.href = 'resource.html';
+      restart();
     }
     
   }
@@ -130,6 +129,22 @@ function youWin() {
   text("You gave in.", width / 2 - 50, height / 2 - 30);
   textSize(12);
   text("Click the mouse anywhere to play again.", width / 2 - 120, height / 2);
+  
+  // Create a button
+  let buttonX = width / 2 - 50;
+  let buttonY = height / 2 + 20;
+  let buttonWidth = 100;
+  let buttonHeight = 40;
+  fill(255);
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  fill(0);
+  textSize(16);
+  text("Leave", buttonX + 25, buttonY + 25);
+
+  // Check if the button is clicked
+  if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
+    window.location.href = 'resource.html'; // Replace 'your_html_page.html' with your actual HTML page URL
+  }
 }
 
 // Spicy 
