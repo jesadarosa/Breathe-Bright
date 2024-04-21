@@ -38,7 +38,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(12);
-  text("Move the \ncatcher with the \nleft and right \narrow keys to \ncatch the falling \nobjects.", width-100, 20);
+  text("Move the \ncatcher with the \nleft and right \narrow keys to \navoid the vape \nYou got this!.", width-100, 20);
   
   // If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
