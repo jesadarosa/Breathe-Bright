@@ -6,7 +6,15 @@ body {
     color:#2E0028;
 }
 
-.title {
-  font-size: 100px;
-  color:#2E0028;
+.container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
+
+img {
+    max-width: 25%;
+    max-height: 15%;
+    float: right;
+}
+
