@@ -33,7 +33,7 @@ function draw() {
   
   // Draw directions to screen
   fill(0);
-  textSize(12);
+  textSize(40);
   text("Move the catcher with the \nleft and right arrow \nkeys to catch \nthe falling objects.", width - 150, 20); // Adjusted text position
   
   // If fallingObject reaches bottom, move back to random position at top
@@ -83,7 +83,7 @@ function draw() {
 
   // Draw the score to screen
   fill(0);
-  textSize(20);
+  textSize(40);
   text("Score = " + score, 10, 30);
   
   // Medium Losing screen
