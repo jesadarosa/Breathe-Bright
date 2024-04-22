@@ -7,9 +7,7 @@ html {
 }
 
 body {
-    background-image: url("IMG/r-bkg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("IMG/r-bkg.png") no-repeat center center/cover;
     font-family: "Forum", serif;
     font-weight: 0;
     color:#2E0028;
