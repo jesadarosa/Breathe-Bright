@@ -7,14 +7,30 @@ body {
      margin: 0;
 }
 
-/*.header {
-    background-color: #e8e8e8;
-    margin-top: 20px;
-    margin-left: 0px;
-    margin-right: 0px;
-    height: 200px;
+.n-container a {
+    padding-top: 100px;
+    display: inline-block;
+    margin-right: 100px;
+    text-decoration: none;
+    /*color: #263F28;*/
+    color: #2E0028;
 }
-*/
+
+.n-container a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    float: right;
+}
+
+.logo img {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 20%;
+    height: 20%;
+}
+
 
 .title-container {
     font-size: 80px;
