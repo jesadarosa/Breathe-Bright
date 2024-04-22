@@ -14,7 +14,6 @@ html, body {
     display: inline-block;
     margin-right: 100px;
     text-decoration: none;
-    /*color: #263F28;*/
     color: #2E0028;
 }
 
@@ -52,10 +51,8 @@ nav {
 
 hr {
     width: 10%;
+    border-color: #2E0028;
 }
-
-
-
 
 .web-container {
     display: inline-block;
