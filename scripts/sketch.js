@@ -41,7 +41,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(20);
-  text("Move the catcher \nwith the left \nand right arrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
+  text("Move the catcher \nwith the left \nand right \narrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
   
   // Ensure fallingObject stays within screen boundaries
   if (fallingObject.x < 0) {
@@ -133,7 +133,7 @@ function draw() {
 
 /* FUNCTIONS */
 
-// Spicy
+
 function youWin() {
   background(224, 224, 224);
   catcher.pos = { x: 600, y: -300 };
@@ -164,7 +164,7 @@ function youWin() {
   }
 }
 
-// Spicy 
+
 function restart() {
   // Reset score
   score = 0;
@@ -174,4 +174,5 @@ function restart() {
   fallingObject.x = random(width);
   fallingObject.velocity.y = random(1, 5);
 }
+
 
