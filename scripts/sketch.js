@@ -100,6 +100,10 @@ function draw() {
     text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
     textSize(12);
     text("Click the mouse anywhere to play again.", width / 0.02, height / 2);
+    text("Leave", buttonX + 25, buttonY + 25);
+  if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
+    window.location.href = 'resource.html'; 
+  }
     if (mouseIsPressed) {
       restart();
     }
