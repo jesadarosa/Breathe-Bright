@@ -2,11 +2,6 @@
 let catcher, fallingObject;
 let score = 0;
 let backgroundImg, catcherImg, fallingObjectImg;
-// Centering the button
-  let buttonWidth = 150;
-  let buttonHeight = 50;
-  let buttonX = width / 2 - buttonWidth / 2;
-  let buttonY = height / 2 + 20;
 
 function preload() {
   backgroundImg = loadImage("IMG/backgroundImg.png");
@@ -39,7 +34,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(20);
-  text("Move the catcher with the \nleft and right arrow \nkeys to catch \nthe falling objects.", width - 150, 20); // Adjusted text position
+  text("Move the catcher \nwith the left and right \narrow keys to catch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
   
   // If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
@@ -78,12 +73,6 @@ function draw() {
     fallingObject.x = random(width);
     fallingObject.velocity.y = random(1, 5); // Fixed typo
     score += 1;
-    // Ensure fallingObject stays within screen boundaries
-  if (fallingObject.x < 0) {
-    fallingObject.x = 0;
-  } else if (fallingObject.x > width - fallingObjectImg.width) {
-    fallingObject.x = width - fallingObjectImg.width;
-  }
   }
 
   // Draw the score to screen
@@ -161,6 +150,12 @@ function youWin() {
   textSize(16);
   textAlign(CENTER, CENTER);
   text("Leave", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
+  
+  // Centering the button
+  let buttonWidth = 150;
+  let buttonHeight = 50;
+  let buttonX = width / 2 - buttonWidth / 2;
+  let buttonY = height / 2 + 20;
   
   // Check if the button is clicked
   if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
