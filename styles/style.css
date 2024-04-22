@@ -33,7 +33,7 @@ video {
 }
 
 body {
-	background-image: url(IMG/homebkg.png);
+	background-image: url("IMG/homebkg.png");
 	background-size: cover;
 	font-family: "Forum", serif;
 	font-weight: 0;
