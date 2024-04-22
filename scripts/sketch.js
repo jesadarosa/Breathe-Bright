@@ -34,7 +34,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(12);
-   textAlign(CENTER, CENTER);
+  textAlign(CENTER, CENTER);
   text("Move the catcher with the \nleft and right arrow \nkeys to catch \nthe falling objects.", width - 150, 20); // Adjusted text position
   
   // If fallingObject reaches bottom, move back to random position at top
@@ -94,6 +94,7 @@ function draw() {
     fallingObject.pos = { x: -100, y: 0 };
     noStroke();
     fill(0);
+    textAlign(CENTER, CENTER);
     text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
     textSize(12);
     
