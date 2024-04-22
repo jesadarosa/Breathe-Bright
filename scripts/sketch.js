@@ -2,10 +2,6 @@
 let catcher, fallingObject;
 let score = 0;
 let backgroundImg, catcherImg, fallingObjectImg;
-let buttonX = 200; // Adjusted, assuming button position
-let buttonY = 300; // Adjusted, assuming button position
-let buttonWidth = 100; // Adjusted, assuming button size
-let buttonHeight = 50; // Adjusted, assuming button size
 
 function preload() {
   backgroundImg = loadImage("IMG/backgroundImg.png");
@@ -99,11 +95,7 @@ function draw() {
     fill(0);
     text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
     textSize(12);
-    text("Click the mouse anywhere to play again.", width / 0.02, height / 2);
-    text("Leave", buttonX + 25, buttonY + 25);
-  if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
-    window.location.href = 'resource.html'; 
-  }
+    
     if (mouseIsPressed) {
       restart();
     }
@@ -132,7 +124,27 @@ function youWin() {
   text("You gave in...", width / 2, height / 2 - 30);
   textSize(12);
   text("Click the mouse anywhere to play again.", width / 2, height / 2);
-  text("Leave", buttonX + 25, buttonY + 25);
+
+  // Centering the button
+  let buttonWidth = 150;
+  let buttonHeight = 50;
+  let buttonX = width / 2 - buttonWidth / 2;
+  let buttonY = height / 2 + 20;
+
+  // Draw white border
+  stroke(255);
+  strokeWeight(2);
+  fill(255);
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+
+  // Draw text on the button
+  fill(0);
+  noStroke();
+  textSize(16);
+  textAlign(CENTER, CENTER);
+  text("Leave", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
+  
+  // Check if the button is clicked
   if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
     window.location.href = 'resource.html'; 
   }
