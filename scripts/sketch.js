@@ -2,6 +2,7 @@
 let catcher, fallingObject;
 let score = 0;
 let backgroundImg, catcherImg, fallingObjectImg;
+let buttonWidth, buttonHeight, buttonX, buttonY; // Define button dimensions and position variables
 
 function preload() {
   backgroundImg = loadImage("IMG/backgroundImg.png");
@@ -16,6 +17,12 @@ function setup() {
   backgroundImg.resize(windowWidth, windowHeight);
   catcherImg.resize(300, 0); // Adjusted catcher width
   fallingObjectImg.resize(300, 0);
+  
+  // Define button dimensions and position
+  buttonWidth = 150;
+  buttonHeight = 50;
+  buttonX = width / 2 - buttonWidth / 2;
+  buttonY = height / 2 + 20;
   
   // Create catcher
   catcher = new Sprite(catcherImg, width / 2, height - catcherImg.height / 2 * 0.5, "k");
@@ -36,19 +43,19 @@ function draw() {
   textSize(20);
   text("Move the catcher \nwith the left \nand right arrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
   
+  // Ensure fallingObject stays within screen boundaries
+  if (fallingObject.x < 0) {
+    fallingObject.x = 0;
+  } else if (fallingObject.x > width - fallingObjectImg.width) {
+    fallingObject.x = width - fallingObjectImg.width;
+  }
+  
   // If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
     fallingObject.y = 0;
     fallingObject.x = random(width);
     fallingObject.velocity.y = random(1, 5); // Fixed typo
     score -= 1; // Moved to inside the if condition
-
-    // Ensure fallingObject stays within screen boundaries
-  if (fallingObject.x < 0) {
-    fallingObject.x = 0;
-  } else if (fallingObject.x > width - fallingObjectImg.width) {
-    fallingObject.x = width - fallingObjectImg.width;
-  }
   }
   
   // Move catcher
@@ -73,15 +80,7 @@ function draw() {
     fallingObject.x = random(width);
     fallingObject.velocity.y = random(1, 5); // Fixed typo
     score += 1;
-
-     // Ensure fallingObject stays within screen boundaries
-  if (fallingObject.x < 0) {
-    fallingObject.x = 0;
-  } else if (fallingObject.x > width - fallingObjectImg.width) {
-    fallingObject.x = width - fallingObjectImg.width;
   }
-  }
-
 
   // Draw the score to screen
   fill(0);
@@ -99,24 +98,24 @@ function draw() {
     text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
     textSize(12);
 
-     // Draw white border
-  stroke(255);
-  strokeWeight(2);
-  fill(255);
-  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+    // Draw white border
+    stroke(255);
+    strokeWeight(2);
+    fill(255);
+    rect(buttonX, buttonY, buttonWidth, buttonHeight);
 
-  // Draw text on the button
-  fill(0);
-  noStroke();
-  textSize(16);
-  textAlign(CENTER, CENTER);
-  text("Leave", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
-  
-  // Check if the button is clicked
-  if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
-    window.location.href = 'resource.html'; 
-  }
+    // Draw text on the button
+    fill(0);
+    noStroke();
+    textSize(16);
+    textAlign(CENTER, CENTER);
+    text("Leave", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
     
+    // Check if the button is clicked
+    if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
+      window.location.href = 'resource.html'; 
+    }
+      
     if (mouseIsPressed) {
       restart();
     }
@@ -159,12 +158,6 @@ function youWin() {
   textAlign(CENTER, CENTER);
   text("Leave", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
   
-  // Centering the button
-  let buttonWidth = 150;
-  let buttonHeight = 50;
-  let buttonX = width / 2 - buttonWidth / 2;
-  let buttonY = height / 2 + 20;
-  
   // Check if the button is clicked
   if (mouseIsPressed && mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
     window.location.href = 'resource.html'; 
@@ -181,3 +174,4 @@ function restart() {
   fallingObject.x = random(width);
   fallingObject.velocity.y = random(1, 5);
 }
+
