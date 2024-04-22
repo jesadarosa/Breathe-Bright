@@ -34,7 +34,8 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(12);
-  text("Move the catcher with the left and right arrow keys to catch the falling objects.", width - 150, 20); // Adjusted text position
+   textAlign(CENTER, CENTER);
+  text("Move the catcher with the \nleft and right arrow \nkeys to catch \nthe falling objects.", width - 150, 20); // Adjusted text position
   
   // If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
