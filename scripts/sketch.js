@@ -95,8 +95,9 @@ function draw() {
     noStroke();
     fill(0);
     textAlign(CENTER, CENTER);
-    text("You took the first step towards healing!", width / 2 - 50, height / 2 - 30);
+    text("You took the first step towards healing!", width / 2, height / 2 - 30);
     textSize(12);
+    text("Click the mouse anywhere to play again.", width / 2, height / 2);
 
     // Draw white border
     stroke(255);
@@ -174,5 +175,3 @@ function restart() {
   fallingObject.x = random(width);
   fallingObject.velocity.y = random(1, 5);
 }
-
-
