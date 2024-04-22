@@ -34,7 +34,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(20);
-  text("Move the catcher \nwith the left and right \narrow keys to catch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
+  text("Move the catcher \nwith the left \nand right arrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
   
   // If fallingObject reaches bottom, move back to random position at top
   if (fallingObject.y >= height) {
@@ -73,7 +73,15 @@ function draw() {
     fallingObject.x = random(width);
     fallingObject.velocity.y = random(1, 5); // Fixed typo
     score += 1;
+
+     // Ensure fallingObject stays within screen boundaries
+  if (fallingObject.x < 0) {
+    fallingObject.x = 0;
+  } else if (fallingObject.x > width - fallingObjectImg.width) {
+    fallingObject.x = width - fallingObjectImg.width;
   }
+  }
+
 
   // Draw the score to screen
   fill(0);
