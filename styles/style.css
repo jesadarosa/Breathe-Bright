@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 
-/* CSS styles for the modal */
+/* Embedded CSS styles for the modal */
         .modal {
             display: block;
             position: fixed;
