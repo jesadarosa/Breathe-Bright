@@ -15,7 +15,7 @@ function setup() {
   
   // Resize images
   backgroundImg.resize(windowWidth, windowHeight);
-  catcherImg.resize(300, 0); // Adjusted catcher width
+  catcherImg.resize(300, 0); 
   fallingObjectImg.resize(300, 0);
   
   // Define button dimensions and position
@@ -41,7 +41,7 @@ function draw() {
   // Draw directions to screen
   fill(0);
   textSize(20);
-  text("Move the catcher \nwith the left \nand right \narrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); // Adjusted text position
+  text("Move the catcher \nwith the left \nand right \narrow keys to \ncatch the vape. \nFind out what \nhappens next.", width - 150, 20); 
   
   // Ensure fallingObject stays within screen boundaries
   if (fallingObject.x < 0) {
@@ -54,8 +54,8 @@ function draw() {
   if (fallingObject.y >= height) {
     fallingObject.y = 0;
     fallingObject.x = random(width);
-    fallingObject.velocity.y = random(1, 5); // Fixed typo
-    score -= 1; // Moved to inside the if condition
+    fallingObject.velocity.y = random(1, 5); 
+    score -= 1; 
   }
   
   // Move catcher
@@ -87,7 +87,7 @@ function draw() {
   textSize(20);
   text("Score = " + score, 10, 30);
   
-  // Medium Losing screen
+  // Healing screen
   if (score < 0) {
     background(224, 224, 224);
     catcher.pos = { x: 600, y: -300 };
@@ -122,9 +122,9 @@ function draw() {
     }
   }
 
-  // Check if player won
+  // Check if player catched the fallingObject
   if (score == 10) {
-    youWin();
+    youLose();
     // Restart the game if player clicks the mouse
     if (mouseIsPressed) {
       restart();
@@ -134,8 +134,7 @@ function draw() {
 
 /* FUNCTIONS */
 
-
-function youWin() {
+function youLose() {
   background(224, 224, 224);
   catcher.pos = { x: 600, y: -300 };
   fallingObject.pos = { x: -100, y: 0 };
