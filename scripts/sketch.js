@@ -82,7 +82,7 @@ function draw() {
   }
 
   // Draw the score to screen
-  fill(255);
+  fill(0);
   textSize(20);
   text("Score = " + score, 10, 30);
   
