@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body {
+html, body {
     font-family: "Forum", serif;
     font-weight: 0;
     color:#2E0028;
      margin: 0;
+     padding: 0;
 }
 
 .n-container a {
@@ -35,19 +37,32 @@ nav {
 .title-container {
     padding-top: 100px;
     font-size: 50px;
+    text-align: center;
 
 }
 
 .title-bio {
     font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #656565;
+    text-align: center;
 }
+
+hr {
+    width: 10%;
+}
+
+
+
 
 .web-container {
     display: inline-block;
     border: none;
     border-radius: 5px;
-    margin: 70px;
-    width: 300px;
+    margin: 80px;
+    width: 500px;
 }
 
 .web-container .description {
@@ -63,6 +78,8 @@ nav {
     width: 100%;
     height: auto;
 }
+
+
 
 .container {
     padding: 2rem;
@@ -130,6 +147,8 @@ nav {
 .hotline-container:hover {
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
 }
+
+
 
 
 
